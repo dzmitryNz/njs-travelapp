@@ -8,14 +8,23 @@ countriesRouter.use(function(req, res, next) {
   next();
 });
 
-countriesRouter.get('/', async (req, res, next) => {
+countriesRouter.get('/all', async (req, res, next) => {
   const list = await storage.listPlaces();
   res.json(list);
 });
 
-countriesRouter.get('/:country', async (req, res, next) => {
+countriesRouter.get('/country/:country', async (req, res, next) => {
 
   const item = await storage.listCountryPlaces(req.params["country"]);
+
+  res
+  .status(item ? 200 : 404)
+  .json(item ?? { statusCode: 404 });
+});
+
+countriesRouter.get('/id/:idprop', async (req, res, next) => {
+
+  const item = await storage.getById(req.params["idprop"]);
 
   res
   .status(item ? 200 : 404)

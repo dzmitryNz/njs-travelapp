@@ -1,7 +1,7 @@
 import { Collection, MongoClient } from 'mongodb';
 import { RecType } from '../types/item';
 const PropertiesJson = {serverUrlLocal: "mongodb://192.168.1.66:27017/",
-serverUrl: "mongodb+srv://dzmitrynz:369852147M@cluster0.5mot7.mongodb.net/"};
+serverUrl: ""};
 
 const url = PropertiesJson.serverUrl;
 
@@ -24,24 +24,29 @@ const listPlaces = async () => {
   const collection = await getCollection();
 
   const list = collection.find({}).toArray();
-  let listPlaces = [];
+  let places = [];
   (await list).forEach((el) => {
-    listPlaces.push({"id": el.id, "nameRu": el.nameRu, "nameBe": el.nameBe, "nameEn": el.nameBe, "coord": el.coord, "articleRu": el.articleRu, "articleBe": el.articleBe, "articleEn": el.articleEn, "photoSrc1": el.photoSrc1})
+    places.push({"id": el.id, "nameRu": el.nameRu, "nameBe": el.nameBe, "nameEn": el.nameBe, "coord": el.coord, "articleRu": el.articleRu, "articleBe": el.articleBe, "articleEn": el.articleEn, "photoSrc1": el.photoSrc1})
   })
-
-  return listPlaces;
+  console.log(list, places)
+  return places;
 };
 
 const listCountryPlaces = async (country: string) => {
   const collection = await getCollection();
-
   const list = collection.find({ country }).toArray();
-
   let countryPlaces = [];
   (await list).forEach((el) => {
     countryPlaces.push({"id": el.id, "nameRu": el.nameRu, "nameBe": el.nameBe, "nameEn": el.nameBe, "coord": el.coord, "articleRu": el.articleRu, "articleBe": el.articleBe, "articleEn": el.articleEn, "photoSrc1": el.photoSrc1})
   })
   return countryPlaces
+};
+
+const getById = async (id: string) => {
+  const collection = await getCollection();
+  const list = collection.findOne({id});
+  console.log(typeof id, id, list)
+  return list;
 };
 
 const listCategories = async () => {
@@ -109,5 +114,6 @@ export {
   listCategories,
   listPopular,
   listByRating,
-  listArray
+  listArray,
+  getById
   }
