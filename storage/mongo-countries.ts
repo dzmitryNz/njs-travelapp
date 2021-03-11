@@ -1,6 +1,6 @@
 import { Collection, MongoClient } from 'mongodb';
 const PropertiesJson = {serverUrlLocal: "mongodb://192.168.1.66:27017/",
-serverUrl: "mongodb+srv://test:test@cluster0.5mot7.mongodb.net/"};
+serverUrl: "mongodb+srv://dzmitrynz:369852147M@cluster0.5mot7.mongodb.net/"};
 
 const url = PropertiesJson.serverUrl;
 
