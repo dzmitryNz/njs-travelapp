@@ -1,6 +1,6 @@
 {
-  "name": "rs-demo-be",
-  "version": "0.0.0",
+  "name": "njs-travelapp",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "server": "node dist/bin/www.js",
@@ -15,7 +15,7 @@
     "http-errors": "~1.6.3",
     "mongodb": "^3.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "pug": "^3.0.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -23,6 +23,11 @@
     "@types/mongodb": "^3.6.3",
     "@types/node": "^14.14.16",
     "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

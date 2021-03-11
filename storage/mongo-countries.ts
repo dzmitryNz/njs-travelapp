@@ -2,7 +2,7 @@ import { Collection, MongoClient } from 'mongodb';
 const PropertiesJson = {serverUrlLocal: "mongodb://192.168.1.66:27017/",
 serverUrl: "mongodb+srv://test:test@cluster0.5mot7.mongodb.net/"};
 
-const url = PropertiesJson.serverUrlLocal;
+const url = PropertiesJson.serverUrl;
 
 const dbName = 'travelapp';
 const collectionName = 'countries';

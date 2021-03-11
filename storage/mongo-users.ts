@@ -5,8 +5,8 @@ serverUrl: "mongodb+srv://test:test@cluster0.5mot7.mongodb.net/"};
 
 const url = PropertiesJson.serverUrl;
 
-const dbName = 'home-planner';
-const collectionName = 'receipts';
+const dbName = 'travelapp';
+const collectionName = 'users';
 
 const getMongoInstance = async () => {
   const client = await MongoClient.connect(url, { useUnifiedTopology: true });
