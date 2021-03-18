@@ -1,7 +1,7 @@
 import { Collection, MongoClient } from 'mongodb';
-import { RecType } from '../types/item';
-const PropertiesJson = {serverUrlLocal: "mongodb://192.168.1.66:27017/",
-serverUrl: ""};
+import { userType } from '../types/item';
+const PropertiesJson = { serverUrlLocal: "mongodb://192.168.1.66:27017/",
+serverUrl: "mongodb+srv://dzmitrynz:369852147M@cluster0.5mot7.mongodb.net" };
 
 const url = PropertiesJson.serverUrl;
 
@@ -100,7 +100,7 @@ const getByArea = async (strArea: string) => {
   return await collection.find({ strArea }).toArray();
 };
 
-const create = async (item: RecType) => {
+const create = async (item: userType) => {
   const collection = await getCollection();
 
   const response = await  collection.insertOne(item);
@@ -108,10 +108,10 @@ const create = async (item: RecType) => {
   return response.ops[0];
 };
 
-const update = async (item: RecType) => {
+const update = async (item: userType) => {
   const collection = await getCollection();
 
-  const strMeal = item.strMeal;
+  const strMeal = item.uid;
 
   const response = await collection.replaceOne({ strMeal }, item);
 

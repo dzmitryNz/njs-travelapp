@@ -1,63 +1,78 @@
-export type ItemType = {
-  _id: Object;
-  strIngredient: string;
-  strCategory: string;
-  intStorePeriodDays: number;
-  intStoreTempMax: number;
-  intStoreTempMin: number;
-}
+export type userType = {
+_id: string,
+uid: string,
+name: string,
+password: string,
+email: string,
+avatar: string,
+date: string
+};
 
-export type RecType = {
-  _id: Object;
-  idMeal: string;
-  strMeal: string;
-  strCategory: string;
-  strArea: string;
-  strSource: string;
-  strForPersons: number;
-  strRequestsCounter: number;
-  strInstructions: "",
-  strMealThumb: string;
-  strTags: string;
-  strYoutube: string;
-  strIngredient1: string;
-  strIngredient2: string;
-  strIngredient3: string;
-  strIngredient4: string;
-  strIngredient5: string;
-  strIngredient6: string;
-  strIngredient7: string;
-  strIngredient8: string;
-  strIngredient9: string;
-  strIngredient10: string;
-  strIngredient11: string;
-  strIngredient12: string;
-  strIngredient13: string;
-  strIngredient14: string;
-  strIngredient15: string;
-  strIngredient16: string;
-  strIngredient17: string;
-  strIngredient18: string;
-  strIngredient19: string;
-  strIngredient20: string;
-  strMeasure1: string;
-  strMeasure2: string;
-  strMeasure3: string;
-  strMeasure4: string;
-  strMeasure5: string;
-  strMeasure6: string;
-  strMeasure7: string;
-  strMeasure8: string;
-  strMeasure9: string;
-  strMeasure10: string;
-  strMeasure11: string;
-  strMeasure12: string;
-  strMeasure13: string;
-  strMeasure14: string;
-  strMeasure15: string;
-  strMeasure16: string;
-  strMeasure17: string;
-  strMeasure18: string;
-  strMeasure19: string;
-  strMeasure20: string;
-}
+export type CountryType = {
+  _id: object,
+  nameEn: string,
+  nameRu: string,
+  nameBe: string,
+  topLevelDomain: Object,
+  articleEn: string,
+  articleRu: string,
+  articleBe: string,
+  videoEn: string,
+  videoRu: string,
+  videoBe: string,
+  photoSrc1: string,
+  photoSrc2: string,
+  photoSrc3: string,
+  alpha2Code: string,
+  alpha3Code: string,
+  callingCodes: object,
+  capital: string,
+  altSpellings: object,
+  region: string,
+  subregion: string,
+  population: number,
+  latlng: object,
+  demonym: string,
+  area: number,
+  gini: any,
+  timezones: object,
+  borders: object,
+  nativeName: string,
+  numericCode: string,
+  currencies: object,
+  languages: object,
+  translations: object,
+  flag: string,
+  regionalBlocs: object,
+  cioc: string
+  coordinats: any;
+};
+
+export type showplaceType = {
+_id: string,
+nameRu: string,
+nameEn: string,
+nameBe: string,
+coord: string,
+articleRu: string,
+articleEn: string,
+articleBe: string,
+fullArticleRu: string,
+fullArticleEn: string,
+fullArticleBe: string,
+photoSrc1: string,
+photoSrc2: string,
+photoSrc3: string,
+buildDate: string,
+placeRu: string,
+placeBe: string,
+placeEn: string,
+siteUrl: string,
+googleMapUrl: string,
+plusCode: string,
+country: string,
+rating: number,
+views: number,
+votes: string,
+id: string
+};
